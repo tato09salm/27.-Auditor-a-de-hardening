@@ -1,0 +1,234 @@
+{
+  "name": "C · Seguimiento de hallazgos persistentes",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Flujo C · Hallazgos persistentes\n\nConsulta hallazgos activos con antigüedad mayor al umbral y prepara una alerta operativa.\n\nEste flujo **no cambia estados automáticamente**: el analista decide si planifica, acepta el riesgo o documenta un falso positivo. Añada un nodo de Slack, Teams o correo después de `Preparar alerta`.\n\nCredencial: `CIS Hardening API Key` con alcance `automation:execute`.",
+        "height": 300,
+        "width": 420,
+        "color": 3
+      },
+      "id": "c0000000-0000-4000-8000-000000000001",
+      "name": "Documentación",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-720, -80]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 5 * * *"
+            }
+          ]
+        }
+      },
+      "id": "c0000000-0000-4000-8000-000000000002",
+      "name": "Diario 05:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-220, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c0000000-0000-4000-8000-000000000003",
+              "name": "apiBaseUrl",
+              "value": "http://host.docker.internal:8000/api/v1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c0000000-0000-4000-8000-000000000004",
+      "name": "Configuración",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Configuración').first().json.apiBaseUrl }}/automation/findings/refresh?days=30",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "c0000000-0000-4000-8000-000000000005",
+      "name": "Consultar persistentes",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [240, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 3000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "cis-hardening-api-key",
+          "name": "CIS Hardening API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c0000000-0000-4000-8000-000000000006",
+              "leftValue": "={{ $json.total }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c0000000-0000-4000-8000-000000000007",
+      "name": "¿Hay hallazgos persistentes?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [500, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c0000000-0000-4000-8000-000000000008",
+              "name": "titulo",
+              "value": "Hallazgos de hardening persistentes",
+              "type": "string"
+            },
+            {
+              "id": "c0000000-0000-4000-8000-000000000009",
+              "name": "total",
+              "value": "={{ $json.total }}",
+              "type": "number"
+            },
+            {
+              "id": "c0000000-0000-4000-8000-00000000000a",
+              "name": "criticos_y_altos",
+              "value": "={{ $json.items.filter(i => i.severity === 'critical' || i.severity === 'high').length }}",
+              "type": "number"
+            },
+            {
+              "id": "c0000000-0000-4000-8000-00000000000b",
+              "name": "detalle",
+              "value": "={{ $json.items }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c0000000-0000-4000-8000-00000000000c",
+      "name": "Preparar alerta",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [780, -100]
+    },
+    {
+      "parameters": {},
+      "id": "c0000000-0000-4000-8000-00000000000d",
+      "name": "Sin alertas",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [780, 100]
+    },
+    {
+      "parameters": {
+        "content": "## Canal de notificación\n\nConecte `Preparar alerta` a su canal corporativo. No se incluyen credenciales de correo ni webhooks reales. Mantenga el detalle sin secretos.",
+        "height": 180,
+        "width": 340,
+        "color": 2
+      },
+      "id": "c0000000-0000-4000-8000-00000000000e",
+      "name": "Nota de canal",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [780, -350]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Diario 05:00": {
+      "main": [
+        [
+          {
+            "node": "Configuración",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configuración": {
+      "main": [
+        [
+          {
+            "node": "Consultar persistentes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar persistentes": {
+      "main": [
+        [
+          {
+            "node": "¿Hay hallazgos persistentes?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Hay hallazgos persistentes?": {
+      "main": [
+        [
+          {
+            "node": "Preparar alerta",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Sin alertas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "versionId": "c1000000-0000-4000-8000-000000000001",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "description": "Detecta hallazgos persistentes y prepara alertas sin cambiar su estado."
+  },
+  "tags": []
+}

@@ -1,0 +1,148 @@
+{
+  "name": "B · Generación de recomendaciones IA",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Flujo B · Recomendaciones IA\n\nSolicita propuestas para hallazgos activos que aún no tienen una recomendación pendiente o aprobada.\n\n- El backend usa LangChain + Ollama.\n- La respuesta se valida y se marcan comandos peligrosos.\n- **Nunca se aprueba ni ejecuta automáticamente.**\n- Si Ollama no responde, el flujo termina con errores controlados y las auditorías siguen funcionando.\n\nCredencial: `CIS Hardening API Key` con alcance `automation:recommendations`.",
+        "height": 300,
+        "width": 420,
+        "color": 4
+      },
+      "id": "b0000000-0000-4000-8000-000000000001",
+      "name": "Documentación",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-720, -80]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 4 * * *"
+            }
+          ]
+        }
+      },
+      "id": "b0000000-0000-4000-8000-000000000002",
+      "name": "Diario 04:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-220, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b0000000-0000-4000-8000-000000000003",
+              "name": "apiBaseUrl",
+              "value": "http://host.docker.internal:8000/api/v1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b0000000-0000-4000-8000-000000000004",
+      "name": "Configuración",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Configuración').first().json.apiBaseUrl }}/automation/recommendations/refresh?limit=2",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 280000
+        }
+      },
+      "id": "b0000000-0000-4000-8000-000000000005",
+      "name": "Generar propuestas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [240, 0],
+      "retryOnFail": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "cis-hardening-api-key",
+          "name": "CIS Hardening API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const r = $input.first().json;\nreturn [{\n  json: {\n    solicitado_en: r.requested_at,\n    propuestas_generadas: r.generated,\n    errores: r.failed,\n    estado: 'pendiente_de_revision_humana',\n    mensaje: 'Ningún comando fue ejecutado. Revise las propuestas en la consola.',\n    detalle: r.items ?? []\n  }\n}];"
+      },
+      "id": "b0000000-0000-4000-8000-000000000006",
+      "name": "Resumen para auditor",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [520, 0]
+    },
+    {
+      "parameters": {
+        "content": "## Siguiente paso humano\n\nEl auditor debe abrir **Recomendaciones IA**, revisar cada comando, comprobar el riesgo de interrupción y aprobar o rechazar. La plataforma no dispone de endpoint de ejecución de correcciones.",
+        "height": 200,
+        "width": 360,
+        "color": 3
+      },
+      "id": "b0000000-0000-4000-8000-000000000007",
+      "name": "Nota de revisión",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [520, -300]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Diario 04:00": {
+      "main": [
+        [
+          {
+            "node": "Configuración",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configuración": {
+      "main": [
+        [
+          {
+            "node": "Generar propuestas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generar propuestas": {
+      "main": [
+        [
+          {
+            "node": "Resumen para auditor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "versionId": "b1000000-0000-4000-8000-000000000001",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "description": "Solicita recomendaciones IA validadas para revisión humana."
+  },
+  "tags": []
+}

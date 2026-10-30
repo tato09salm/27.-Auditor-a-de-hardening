@@ -1,0 +1,226 @@
+{
+  "name": "A · Auditoría programada CIS",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Flujo A · Auditoría programada\n\n1. n8n dispara cada 15 minutos.\n2. El backend selecciona programaciones vencidas con bloqueo para evitar duplicados.\n3. Ejecuta checks de solo lectura, calcula score, guarda evidencia y actualiza hallazgos.\n4. Consulta el resumen del dashboard.\n\n**Credencial requerida:** HTTP Header Auth llamada `CIS Hardening API Key` con `X-API-Key` y un token de alcance `automation:execute`.\n\nAjuste `apiBaseUrl` al host real del backend.",
+        "height": 320,
+        "width": 420,
+        "color": 5
+      },
+      "id": "a0000000-0000-4000-8000-000000000001",
+      "name": "Documentación",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-720, -80]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "a0000000-0000-4000-8000-000000000002",
+      "name": "Cada 15 minutos",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-220, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a0000000-0000-4000-8000-000000000003",
+              "name": "apiBaseUrl",
+              "value": "http://host.docker.internal:8000/api/v1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a0000000-0000-4000-8000-000000000004",
+      "name": "Configuración",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Configuración').first().json.apiBaseUrl }}/automation/audits/run-due",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "a0000000-0000-4000-8000-000000000005",
+      "name": "Ejecutar auditorías vencidas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [240, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "cis-hardening-api-key",
+          "name": "CIS Hardening API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a0000000-0000-4000-8000-000000000006",
+              "leftValue": "={{ $json.runs_started }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a0000000-0000-4000-8000-000000000007",
+      "name": "¿Se iniciaron ejecuciones?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [500, 0]
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Configuración').first().json.apiBaseUrl }}/dashboard",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "a0000000-0000-4000-8000-000000000008",
+      "name": "Consultar resumen",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [760, -100],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "cis-hardening-api-key",
+          "name": "CIS Hardening API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const dashboard = $input.first().json;\nconst runs = $('Ejecutar auditorías vencidas').first().json;\nreturn [{\n  json: {\n    ejecutado_en: new Date().toISOString(),\n    programaciones_vencidas: runs.due_schedules ?? 0,\n    ejecuciones_iniciadas: runs.runs_started ?? 0,\n    servidores_auditados: dashboard.summary?.audited_servers ?? 0,\n    cumplimiento_promedio: dashboard.summary?.average_score ?? null,\n    hallazgos_altos_criticos: (dashboard.summary?.findings_critical ?? 0) + (dashboard.summary?.findings_high ?? 0),\n    detalle: runs.items ?? []\n  }\n}];"
+      },
+      "id": "a0000000-0000-4000-8000-000000000009",
+      "name": "Resumen de ejecución",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1020, -100]
+    },
+    {
+      "parameters": {},
+      "id": "a0000000-0000-4000-8000-00000000000a",
+      "name": "Sin ejecuciones",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [760, 100]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Cada 15 minutos": {
+      "main": [
+        [
+          {
+            "node": "Configuración",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configuración": {
+      "main": [
+        [
+          {
+            "node": "Ejecutar auditorías vencidas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ejecutar auditorías vencidas": {
+      "main": [
+        [
+          {
+            "node": "¿Se iniciaron ejecuciones?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Se iniciaron ejecuciones?": {
+      "main": [
+        [
+          {
+            "node": "Consultar resumen",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Sin ejecuciones",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar resumen": {
+      "main": [
+        [
+          {
+            "node": "Resumen de ejecución",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "a1000000-0000-4000-8000-000000000001",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "description": "Dispara auditorías vencidas y consulta el resumen. La lógica de checks y scoring reside en el backend auditado."
+  },
+  "tags": []
+}

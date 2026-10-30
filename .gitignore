@@ -1,0 +1,41 @@
+# Secretos y configuración local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+backend/generated/
+backend/generated_test/
+backend/.pytest_cache/
+backend/.coverage
+htmlcov/
+.screens/
+.n8n-test/
+frontend/.npm-cache/
+frontend/.tmp/
+frontend/tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+frontend/dist/
+*.tsbuildinfo
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Pruebas y temporales
+.pytest_cache/
+tmp/
+*.log
+cis_benchmark_text.txt
