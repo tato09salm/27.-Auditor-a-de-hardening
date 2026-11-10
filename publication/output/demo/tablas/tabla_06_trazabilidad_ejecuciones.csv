@@ -1,0 +1,25 @@
+﻿Ejecución,Fecha,Servidor,Entorno,Disparador,Estado,Controles,Aprobados,Incumplidos,No aplica,No evaluado,Cumplimiento (%),Cobertura (%),Duración (s),Simulado
+RUN-08-03,2026-09-23 04:00,ERP heredado,Producción,Automatizada,Completada,14,11,3,0,0,78.57,100.0,10.72,Sí
+RUN-06-03,2026-09-23 04:00,Herramientas de desarrollo,Desarrollo,Automatizada,Completada,14,6,6,1,1,50.0,85.71,10.28,Sí
+RUN-02-03,2026-09-23 04:00,API de pagos,Producción,Automatizada,Completada,14,10,4,0,0,71.43,100.0,11.74,Sí
+RUN-04-03,2026-09-23 04:00,Nodo de respaldo,Pruebas,Automatizada,Completada,14,12,2,0,0,85.71,100.0,10.16,Sí
+RUN-07-03,2026-09-23 03:00,DNS interno,Producción,Automatizada,Completada,14,9,2,1,2,81.82,78.57,12.02,Sí
+RUN-01-03,2026-09-23 03:00,Portal de clientes,Producción,Automatizada,Completada,14,10,4,0,0,71.43,100.0,11.84,Sí
+RUN-05-03,2026-09-23 03:00,Observabilidad,Producción,Automatizada,Completada,14,13,1,0,0,92.86,100.0,11.89,Sí
+RUN-03-03,2026-09-23 03:00,Base de datos de clientes,Producción,Automatizada,Completada,14,9,5,0,0,64.29,100.0,11.18,Sí
+RUN-06-02,2026-08-19 04:00,Herramientas de desarrollo,Desarrollo,Programada,Completada,14,7,7,0,0,50.0,100.0,10.56,Sí
+RUN-04-02,2026-08-19 04:00,Nodo de respaldo,Pruebas,Programada,Completada,14,12,2,0,0,85.71,100.0,9.82,Sí
+RUN-08-02,2026-08-19 04:00,ERP heredado,Producción,Programada,Completada,14,5,9,0,0,35.71,100.0,11.44,Sí
+RUN-02-02,2026-08-19 04:00,API de pagos,Producción,Programada,Completada,14,10,4,0,0,71.43,100.0,10.64,Sí
+RUN-03-02,2026-08-19 03:00,Base de datos de clientes,Producción,Programada,Completada,14,11,2,0,1,84.62,92.86,10.71,Sí
+RUN-01-02,2026-08-19 03:00,Portal de clientes,Producción,Programada,Completada,14,7,7,0,0,50.0,100.0,11.23,Sí
+RUN-05-02,2026-08-19 03:00,Observabilidad,Producción,Programada,Completada,14,9,4,0,1,69.23,92.86,10.59,Sí
+RUN-07-02,2026-08-19 03:00,DNS interno,Producción,Programada,Completada,14,13,1,0,0,92.86,100.0,11.26,Sí
+RUN-04-01,2026-07-15 04:00,Nodo de respaldo,Pruebas,Manual,Completada,14,9,5,0,0,64.29,100.0,11.24,Sí
+RUN-06-01,2026-07-15 04:00,Herramientas de desarrollo,Desarrollo,Manual,Completada,14,6,7,0,1,46.15,92.86,11.01,Sí
+RUN-02-01,2026-07-15 04:00,API de pagos,Producción,Manual,Completada,14,7,7,0,0,50.0,100.0,12.38,Sí
+RUN-08-01,2026-07-15 04:00,ERP heredado,Producción,Manual,Completada,14,3,11,0,0,21.43,100.0,11.19,Sí
+RUN-01-01,2026-07-15 03:00,Portal de clientes,Producción,Manual,Completada,14,8,5,0,1,61.54,92.86,11.03,Sí
+RUN-07-01,2026-07-15 03:00,DNS interno,Producción,Manual,Completada,14,9,5,0,0,64.29,100.0,11.55,Sí
+RUN-03-01,2026-07-15 03:00,Base de datos de clientes,Producción,Manual,Completada,14,4,9,0,1,30.77,92.86,10.18,Sí
+RUN-05-01,2026-07-15 03:00,Observabilidad,Producción,Manual,Completada,14,12,2,0,0,85.71,100.0,9.8,Sí

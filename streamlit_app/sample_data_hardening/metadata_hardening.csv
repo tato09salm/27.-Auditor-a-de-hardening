@@ -1,0 +1,51 @@
+server_id,filename,cluster_group,posture_class,cis_score,failed_controls,open_ports,environment,os_version,split_assigned
+SRV_0001,SRV_0001_posture_matrix.png,CLUSTER_02,Hardened,92.7,2,1,Desarrollo,Ubuntu 20.04 LTS,Train
+SRV_0002,SRV_0002_posture_matrix.png,CLUSTER_03,Hardened,86.9,2,2,Produccion,Ubuntu 22.04 LTS,Train
+SRV_0003,SRV_0003_posture_matrix.png,CLUSTER_04,Vulnerable,74.9,6,3,Staging,Ubuntu 22.04 LTS,Test
+SRV_0004,SRV_0004_posture_matrix.png,CLUSTER_05,Hardened,93.2,1,1,Produccion,Ubuntu 22.04 LTS,Val
+SRV_0005,SRV_0005_posture_matrix.png,CLUSTER_06,Vulnerable,63.3,7,5,Desarrollo,Ubuntu 20.04 LTS,Train
+SRV_0006,SRV_0006_posture_matrix.png,CLUSTER_07,Hardened,89.7,1,2,Produccion,Debian 12,Train
+SRV_0007,SRV_0007_posture_matrix.png,CLUSTER_08,Hardened,98.0,2,1,Desarrollo,Ubuntu 22.04 LTS,Test
+SRV_0008,SRV_0008_posture_matrix.png,CLUSTER_01,Hardened,86.8,0,1,Desarrollo,Debian 12,Train
+SRV_0009,SRV_0009_posture_matrix.png,CLUSTER_02,Hardened,86.1,0,1,Produccion,Debian 12,Train
+SRV_0010,SRV_0010_posture_matrix.png,CLUSTER_03,Exposed,34.6,9,8,Desarrollo,Debian 12,Train
+SRV_0011,SRV_0011_posture_matrix.png,CLUSTER_04,Exposed,26.1,9,8,Staging,Ubuntu 22.04 LTS,Test
+SRV_0012,SRV_0012_posture_matrix.png,CLUSTER_05,Hardened,98.1,2,1,Staging,Ubuntu 22.04 LTS,Train
+SRV_0013,SRV_0013_posture_matrix.png,CLUSTER_06,Hardened,94.1,0,2,Staging,Ubuntu 22.04 LTS,Train
+SRV_0014,SRV_0014_posture_matrix.png,CLUSTER_07,Hardened,87.4,1,1,Desarrollo,Ubuntu 20.04 LTS,Val
+SRV_0015,SRV_0015_posture_matrix.png,CLUSTER_08,Hardened,97.2,0,2,Produccion,Ubuntu 20.04 LTS,Val
+SRV_0016,SRV_0016_posture_matrix.png,CLUSTER_01,Hardened,90.1,0,1,Staging,Ubuntu 20.04 LTS,Train
+SRV_0017,SRV_0017_posture_matrix.png,CLUSTER_02,Exposed,41.4,10,13,Staging,Ubuntu 20.04 LTS,Train
+SRV_0018,SRV_0018_posture_matrix.png,CLUSTER_03,Hardened,93.7,0,1,Produccion,Ubuntu 22.04 LTS,Train
+SRV_0019,SRV_0019_posture_matrix.png,CLUSTER_04,Vulnerable,61.3,5,3,Produccion,Ubuntu 20.04 LTS,Val
+SRV_0020,SRV_0020_posture_matrix.png,CLUSTER_05,Hardened,89.1,1,2,Staging,Ubuntu 22.04 LTS,Test
+SRV_0021,SRV_0021_posture_matrix.png,CLUSTER_06,Vulnerable,56.6,5,5,Desarrollo,Ubuntu 20.04 LTS,Train
+SRV_0022,SRV_0022_posture_matrix.png,CLUSTER_07,Vulnerable,50.1,4,5,Produccion,Ubuntu 22.04 LTS,Train
+SRV_0023,SRV_0023_posture_matrix.png,CLUSTER_08,Vulnerable,62.6,4,4,Produccion,Ubuntu 22.04 LTS,Train
+SRV_0024,SRV_0024_posture_matrix.png,CLUSTER_01,Vulnerable,54.3,6,5,Desarrollo,Ubuntu 20.04 LTS,Test
+SRV_0025,SRV_0025_posture_matrix.png,CLUSTER_02,Hardened,97.6,2,1,Desarrollo,Ubuntu 22.04 LTS,Train
+SRV_0026,SRV_0026_posture_matrix.png,CLUSTER_03,Vulnerable,49.0,6,6,Produccion,Debian 12,Test
+SRV_0027,SRV_0027_posture_matrix.png,CLUSTER_04,Vulnerable,48.1,6,3,Produccion,Ubuntu 22.04 LTS,Train
+SRV_0028,SRV_0028_posture_matrix.png,CLUSTER_05,Vulnerable,72.2,4,3,Desarrollo,Ubuntu 22.04 LTS,Train
+SRV_0029,SRV_0029_posture_matrix.png,CLUSTER_06,Exposed,30.4,10,14,Staging,Debian 12,Train
+SRV_0030,SRV_0030_posture_matrix.png,CLUSTER_07,Hardened,93.5,0,1,Desarrollo,Ubuntu 20.04 LTS,Val
+SRV_0031,SRV_0031_posture_matrix.png,CLUSTER_08,Hardened,87.3,2,1,Desarrollo,Ubuntu 20.04 LTS,Train
+SRV_0032,SRV_0032_posture_matrix.png,CLUSTER_01,Vulnerable,48.9,7,4,Produccion,Ubuntu 22.04 LTS,Train
+SRV_0033,SRV_0033_posture_matrix.png,CLUSTER_02,Hardened,95.6,1,1,Staging,Ubuntu 20.04 LTS,Train
+SRV_0034,SRV_0034_posture_matrix.png,CLUSTER_03,Hardened,87.4,1,2,Produccion,Ubuntu 20.04 LTS,Train
+SRV_0035,SRV_0035_posture_matrix.png,CLUSTER_04,Vulnerable,48.8,4,6,Staging,Ubuntu 22.04 LTS,Val
+SRV_0036,SRV_0036_posture_matrix.png,CLUSTER_05,Hardened,85.4,0,1,Staging,Debian 12,Train
+SRV_0037,SRV_0037_posture_matrix.png,CLUSTER_06,Vulnerable,73.8,4,3,Desarrollo,Ubuntu 20.04 LTS,Train
+SRV_0038,SRV_0038_posture_matrix.png,CLUSTER_07,Hardened,87.5,2,1,Staging,Debian 12,Train
+SRV_0039,SRV_0039_posture_matrix.png,CLUSTER_08,Vulnerable,60.0,4,3,Staging,Ubuntu 22.04 LTS,Train
+SRV_0040,SRV_0040_posture_matrix.png,CLUSTER_01,Hardened,88.9,2,2,Desarrollo,Ubuntu 20.04 LTS,Train
+SRV_0041,SRV_0041_posture_matrix.png,CLUSTER_02,Vulnerable,58.6,7,5,Staging,Ubuntu 22.04 LTS,Train
+SRV_0042,SRV_0042_posture_matrix.png,CLUSTER_03,Vulnerable,62.4,5,4,Staging,Ubuntu 20.04 LTS,Train
+SRV_0043,SRV_0043_posture_matrix.png,CLUSTER_04,Hardened,84.3,2,1,Desarrollo,Ubuntu 22.04 LTS,Train
+SRV_0044,SRV_0044_posture_matrix.png,CLUSTER_05,Vulnerable,68.5,5,6,Produccion,Ubuntu 22.04 LTS,Train
+SRV_0045,SRV_0045_posture_matrix.png,CLUSTER_06,Hardened,98.2,1,1,Produccion,Ubuntu 22.04 LTS,Train
+SRV_0046,SRV_0046_posture_matrix.png,CLUSTER_07,Hardened,97.9,2,1,Produccion,Ubuntu 22.04 LTS,Train
+SRV_0047,SRV_0047_posture_matrix.png,CLUSTER_08,Exposed,34.8,11,9,Produccion,Ubuntu 22.04 LTS,Train
+SRV_0048,SRV_0048_posture_matrix.png,CLUSTER_01,Hardened,96.3,1,1,Staging,Ubuntu 22.04 LTS,Train
+SRV_0049,SRV_0049_posture_matrix.png,CLUSTER_02,Hardened,88.0,0,2,Produccion,Ubuntu 20.04 LTS,Train
+SRV_0050,SRV_0050_posture_matrix.png,CLUSTER_03,Hardened,98.2,0,2,Staging,Ubuntu 22.04 LTS,Test

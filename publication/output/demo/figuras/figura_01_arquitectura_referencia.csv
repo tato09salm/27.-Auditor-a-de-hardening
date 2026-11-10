@@ -1,0 +1,10 @@
+﻿componente,función
+Usuarios,"Auditor, analista, administrador y observador"
+Frontend,React SPA y anexo Streamlit de publicación
+API,"FastAPI, RBAC, validación y orquestación"
+PostgreSQL,"Controles, ejecuciones, evidencia y bitácora append-only"
+Motor SSH,Comandos estáticos de solo lectura y host key pinning
+Servidor Linux,Objetivo autorizado; no se modifica
+LangChain + Ollama,"Propuesta JSON opcional, sin ejecución"
+Revisión humana,Aprobación o rechazo documentado
+n8n,Programación de auditorías y reportes

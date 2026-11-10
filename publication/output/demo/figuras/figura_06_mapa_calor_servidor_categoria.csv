@@ -1,0 +1,65 @@
+﻿server_name,category,pass_rate,evaluated
+API de pagos,Acceso remoto,66.66666666666667,12.0
+API de pagos,Actualizaciones,66.66666666666667,3.0
+API de pagos,Autenticación,50.0,6.0
+API de pagos,Firewall,50.0,6.0
+API de pagos,Hardening del kernel,66.66666666666667,3.0
+API de pagos,Permisos de archivos,100.0,3.0
+API de pagos,Registro de eventos,83.33333333333333,6.0
+API de pagos,Servicios,33.333333333333336,3.0
+Base de datos de clientes,Acceso remoto,58.333333333333336,12.0
+Base de datos de clientes,Actualizaciones,33.333333333333336,3.0
+Base de datos de clientes,Autenticación,83.33333333333333,6.0
+Base de datos de clientes,Firewall,33.333333333333336,6.0
+Base de datos de clientes,Hardening del kernel,66.66666666666667,3.0
+Base de datos de clientes,Permisos de archivos,66.66666666666667,3.0
+Base de datos de clientes,Registro de eventos,100.0,5.0
+Base de datos de clientes,Servicios,0.0,2.0
+DNS interno,Acceso remoto,100.0,11.0
+DNS interno,Actualizaciones,66.66666666666667,3.0
+DNS interno,Autenticación,20.0,5.0
+DNS interno,Firewall,83.33333333333333,6.0
+DNS interno,Hardening del kernel,66.66666666666667,3.0
+DNS interno,Permisos de archivos,100.0,3.0
+DNS interno,Registro de eventos,100.0,5.0
+DNS interno,Servicios,66.66666666666667,3.0
+ERP heredado,Acceso remoto,58.333333333333336,12.0
+ERP heredado,Actualizaciones,33.333333333333336,3.0
+ERP heredado,Autenticación,16.666666666666668,6.0
+ERP heredado,Firewall,50.0,6.0
+ERP heredado,Hardening del kernel,33.333333333333336,3.0
+ERP heredado,Permisos de archivos,33.333333333333336,3.0
+ERP heredado,Registro de eventos,50.0,6.0
+ERP heredado,Servicios,66.66666666666667,3.0
+Herramientas de desarrollo,Acceso remoto,58.333333333333336,12.0
+Herramientas de desarrollo,Actualizaciones,50.0,2.0
+Herramientas de desarrollo,Autenticación,33.333333333333336,6.0
+Herramientas de desarrollo,Firewall,33.333333333333336,6.0
+Herramientas de desarrollo,Hardening del kernel,0.0,2.0
+Herramientas de desarrollo,Permisos de archivos,100.0,2.0
+Herramientas de desarrollo,Registro de eventos,50.0,6.0
+Herramientas de desarrollo,Servicios,66.66666666666667,3.0
+Nodo de respaldo,Acceso remoto,100.0,12.0
+Nodo de respaldo,Actualizaciones,33.333333333333336,3.0
+Nodo de respaldo,Autenticación,100.0,6.0
+Nodo de respaldo,Firewall,83.33333333333333,6.0
+Nodo de respaldo,Hardening del kernel,66.66666666666667,3.0
+Nodo de respaldo,Permisos de archivos,66.66666666666667,3.0
+Nodo de respaldo,Registro de eventos,66.66666666666667,6.0
+Nodo de respaldo,Servicios,33.333333333333336,3.0
+Observabilidad,Acceso remoto,83.33333333333333,12.0
+Observabilidad,Actualizaciones,66.66666666666667,3.0
+Observabilidad,Autenticación,83.33333333333333,6.0
+Observabilidad,Firewall,83.33333333333333,6.0
+Observabilidad,Hardening del kernel,33.333333333333336,3.0
+Observabilidad,Permisos de archivos,100.0,3.0
+Observabilidad,Registro de eventos,100.0,6.0
+Observabilidad,Servicios,100.0,2.0
+Portal de clientes,Acceso remoto,50.0,12.0
+Portal de clientes,Actualizaciones,0.0,3.0
+Portal de clientes,Autenticación,50.0,6.0
+Portal de clientes,Firewall,83.33333333333333,6.0
+Portal de clientes,Hardening del kernel,100.0,3.0
+Portal de clientes,Permisos de archivos,100.0,3.0
+Portal de clientes,Registro de eventos,60.0,5.0
+Portal de clientes,Servicios,66.66666666666667,3.0

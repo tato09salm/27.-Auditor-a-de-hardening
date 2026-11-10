@@ -1,0 +1,9 @@
+﻿Categoría,Controles,Evaluados,Aprobados,Incumplidos,No aplica,No evaluado,Tasa de aprobación (%),Cobertura (%)
+Actualizaciones,1,23,10,13,0,1,43.48,95.83
+Servicios,1,22,12,10,0,2,54.55,91.67
+Autenticación,2,47,26,21,0,1,55.32,97.92
+Hardening del kernel,1,23,13,10,0,1,56.52,95.83
+Firewall,2,48,30,18,0,0,62.5,100.0
+Acceso remoto,4,95,68,27,1,0,71.58,98.96
+Registro de eventos,2,45,34,11,0,3,75.56,93.75
+Permisos de archivos,1,23,19,4,1,0,82.61,95.83

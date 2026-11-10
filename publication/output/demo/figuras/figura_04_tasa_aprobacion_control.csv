@@ -1,0 +1,15 @@
+﻿control_code,control_title,severity,official,pass_rate,applicable
+UPDATES,Actualizaciones y parches de seguridad instalados,high,True,43.48,23
+AUTH-PWQUALITY,Requisitos de complejidad de contraseñas,high,True,54.17,24
+SERVICES,Servicios de red innecesarios deshabilitados,medium,False,54.55,22
+ASLR,Aleatorización del espacio de direcciones (ASLR),medium,True,56.52,23
+AUTH-FAILLOCK,Bloqueo de cuentas por intentos fallidos,high,True,56.52,23
+AUDITD,auditd habilitado y activo,medium,True,57.14,21
+FW-ENABLED,Firewall UFW habilitado,high,True,58.33,24
+SSH-KEYONLY,SSH prefiere autenticación por clave pública,medium,False,62.5,24
+FW-DEFAULT,Política por defecto del firewall: denegar entrada,high,True,66.67,24
+SSH-EMPTY,SSH rechaza contraseñas vacías,high,True,69.57,23
+SSH-MAXAUTH,SSH limita los intentos de autenticación,medium,True,75.0,24
+SSH-ROOT,Acceso SSH directo de root deshabilitado,high,True,79.17,24
+SHADOW-PERMS,Permisos restrictivos sobre /etc/shadow,high,True,82.61,23
+LOGGING,Servicio de registro rsyslog habilitado,medium,True,91.67,24

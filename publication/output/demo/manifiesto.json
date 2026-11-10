@@ -1,0 +1,777 @@
+{
+  "project": "CIS Hardening Auditor",
+  "artifact": "Anexo editorial para artículo",
+  "package_version": "1.0.0",
+  "generated_at": "2026-11-03T14:49:14",
+  "source": {
+    "type": "synthetic",
+    "label": "Dataset sintético reproducible",
+    "organization": "Organización sintética de demostración",
+    "note": "Datos sintéticos generados con semilla 20261103: 8 servidores, 3 ejecuciones por servidor y 14 controles. No son mediciones empíricas ni infraestructura real.",
+    "key": "demo-v1"
+  },
+  "dataset": {
+    "servers": 8,
+    "runs": 24,
+    "checks": 336,
+    "controls": 14,
+    "findings": 76,
+    "metadata": {
+      "seed": 20261103,
+      "servers": 8,
+      "runs": 24,
+      "controls": 14,
+      "checks": 336,
+      "findings": 76,
+      "period": "2026-07-15 a 2026-09-23",
+      "formula": "score = aprobados / (aprobados + incumplidos) × 100",
+      "warning": "DATOS SIMULADOS: no usar como resultados empíricos."
+    },
+    "sha256": "82c5bb057a44a84912aa92684d0a7e8562cc52ae6e9e3ccc8c49aee891b28c0b"
+  },
+  "tables": [
+    {
+      "number": 1,
+      "slug": "caracterizacion_servidores",
+      "title": "Tabla 1. Caracterización de la muestra de servidores auditados",
+      "caption": "Caracterización de la muestra de servidores auditados, con entorno, sistema operativo, perfil, cumplimiento y cobertura de la última ejecución.",
+      "explanation": "Permite juzgar la validez externa y el alcance real de la evaluación. Un promedio agregado de cumplimiento oculta que la muestra puede mezclar producción, pruebas y desarrollo, distintos sistemas operativos, áreas responsables y niveles de exposición. Esta tabla hace explícita esa composición antes de interpretar cualquier indicador.",
+      "description": "Una fila por servidor. Las columnas describen el entorno, el sistema operativo, el área responsable, el método de conexión y el perfil aplicado. «Cumplimiento» y «Cobertura» corresponden a la última ejecución completada de cada servidor; «Hallazgos activos» excluye los resueltos y los falsos positivos documentados.",
+      "notes": "Fuente: Dataset sintético reproducible. n=8 servidores. Periodo: 2026-07-15 a 2026-09-23. Score = aprobados / (aprobados + incumplidos) × 100; no aplicables y no evaluados se excluyen del denominador. DATOS SIMULADOS: no usar como resultados empíricos.",
+      "rows": 8,
+      "columns": [
+        "Servidor",
+        "Hostname",
+        "Entorno",
+        "Sistema operativo",
+        "Área responsable",
+        "Conexión",
+        "Perfil",
+        "Auditorías",
+        "Cumplimiento (%)",
+        "Cobertura (%)",
+        "Hallazgos activos",
+        "Última auditoría"
+      ],
+      "files": {
+        "xlsx": {
+          "file": "tabla_01_caracterizacion_servidores.xlsx",
+          "bytes": 8669,
+          "sha256": "f43c44ac75203c6d1d317e5354f056ade0c9fa5a8a088f3662f750eee9580aef"
+        },
+        "csv": {
+          "file": "tabla_01_caracterizacion_servidores.csv",
+          "bytes": 1284,
+          "sha256": "f5b15a908afbf2f40d627f7d6f813768842cfded38497aee7284d4fe7f183ba5"
+        },
+        "pdf": {
+          "file": "tabla_01_caracterizacion_servidores.pdf",
+          "bytes": 4519,
+          "sha256": "4fc982958c4dff64330126b504359a57a788ea84168156a38f19302c9e76ea50"
+        }
+      }
+    },
+    {
+      "number": 2,
+      "slug": "catalogo_controles",
+      "title": "Tabla 2. Catálogo de controles de hardening evaluados",
+      "caption": "Catálogo de controles evaluados, con referencia CIS, severidad, nivel, tipo de mapeo y propósito de cada requisito.",
+      "explanation": "Documenta el instrumento de medición y la transparencia del mapeo. La tabla distingue los controles con referencia CIS contrastada de los controles internos inspirados en buenas prácticas. Esta separación evita atribuir al estándar CIS resultados que la plataforma calcula con controles propios y permite reproducir el alcance del estudio.",
+      "description": "Una fila por control. «Referencia CIS» indica el identificador del benchmark cuando el mapeo fue verificado; «Mapeo» señala si el control es CIS oficial o interno. «Nivel» resume el perfil del benchmark (N1/N2) y «Propósito» resume el requisito evaluado.",
+      "notes": "Fuente: Dataset sintético reproducible; catálogo de 14 controles activos. La referencia CIS se contrastó con CIS Ubuntu Linux 22.04 LTS Benchmark v1.0.0. Los controles internos no constituyen un mapeo oficial de CIS.",
+      "rows": 14,
+      "columns": [
+        "Código",
+        "Referencia CIS",
+        "Control",
+        "Categoría",
+        "Severidad",
+        "Nivel",
+        "Mapeo",
+        "Propósito"
+      ],
+      "files": {
+        "xlsx": {
+          "file": "tabla_02_catalogo_controles.xlsx",
+          "bytes": 9210,
+          "sha256": "fd2b709adbc1aee16f87f21e083aa86e60ca4b6c0b0926571965c3fa26f602bc"
+        },
+        "csv": {
+          "file": "tabla_02_catalogo_controles.csv",
+          "bytes": 2749,
+          "sha256": "6620e50890256c1766f31167dc681a48f3beb526f8c9a683258cd4cbac64a09e"
+        },
+        "pdf": {
+          "file": "tabla_02_catalogo_controles.pdf",
+          "bytes": 5634,
+          "sha256": "b96a020aad5b33aba68061beb53d4472c0e795f61ff1a2d55a909632663ac1fd"
+        }
+      }
+    },
+    {
+      "number": 3,
+      "slug": "resultados_por_control",
+      "title": "Tabla 3. Resultados agregados por control",
+      "caption": "Resultados agregados por control: evaluados, aprobados, incumplidos, no aplicables, no evaluados, tasa de aprobación, cobertura y duración media.",
+      "explanation": "Identifica los controles que concentran el incumplimiento y permite priorizar la remediación con evidencia. También muestra la cobertura: un control con una tasa alta pero con muchos casos no evaluados no ofrece la misma confianza que uno evaluado en todos los servidores.",
+      "description": "Una fila por control, agregando todas las ejecuciones del periodo. «Evaluados» es la suma de aprobados e incumplidos; la tasa de aprobación usa ese denominador. «Cobertura» indica qué proporción del total de checks del control pudo evaluarse. La duración media resume el coste operativo de la comprobación.",
+      "notes": "Fuente: Dataset sintético reproducible; 336 checks y 24 ejecuciones. La tasa excluye «No aplica» y «No evaluado». Las duraciones provienen del motor de comprobaciones y no incluyen la latencia de red del entorno de publicación. DATOS SIMULADOS: no usar como resultados empíricos.",
+      "rows": 14,
+      "columns": [
+        "Código",
+        "Control",
+        "Severidad",
+        "Mapeo",
+        "Evaluados",
+        "Aprobados",
+        "Incumplidos",
+        "No aplica",
+        "No evaluado",
+        "Tasa de aprobación (%)",
+        "Cobertura (%)",
+        "Duración media (ms)"
+      ],
+      "files": {
+        "xlsx": {
+          "file": "tabla_03_resultados_por_control.xlsx",
+          "bytes": 9150,
+          "sha256": "16f28384603b3fef3987be9eacc9236d08d387e541a4a6ad389995b861789d1d"
+        },
+        "csv": {
+          "file": "tabla_03_resultados_por_control.csv",
+          "bytes": 1543,
+          "sha256": "540e20528cd3eaf677e27a6e5f9d2731bf5ea7f0ccf86a9f23c3f8d549b69ace"
+        },
+        "pdf": {
+          "file": "tabla_03_resultados_por_control.pdf",
+          "bytes": 5382,
+          "sha256": "480bccaf406a1e6f62bd0b99e20a53aec280c050ba23d55e3abaf3b5017023e9"
+        }
+      }
+    },
+    {
+      "number": 4,
+      "slug": "cumplimiento_por_categoria",
+      "title": "Tabla 4. Cumplimiento por categoría de control",
+      "caption": "Cumplimiento por categoría de control, con controles, evaluados, aprobados, incumplidos, tasa de aprobación y cobertura.",
+      "explanation": "Agrupa los controles por dominio para una lectura ejecutiva. Las categorías permiten detectar patrones que un ranking individual de controles no muestra: por ejemplo, una organización puede tener buen cumplimiento de firewall y un déficit sistémico en gestión de parches o autenticación.",
+      "description": "Una fila por categoría. Los conteos agregan todos los checks del periodo. La tasa de aprobación excluye los no aplicables y no evaluados; la cobertura muestra la proporción de checks con evidencia suficiente. Las categorías se ordenan de menor a mayor tasa.",
+      "notes": "Fuente: Dataset sintético reproducible; 336 checks. La categoría es la definida en el catálogo del benchmark y no implica una jerarquía de riesgo. DATOS SIMULADOS: no usar como resultados empíricos.",
+      "rows": 8,
+      "columns": [
+        "Categoría",
+        "Controles",
+        "Evaluados",
+        "Aprobados",
+        "Incumplidos",
+        "No aplica",
+        "No evaluado",
+        "Tasa de aprobación (%)",
+        "Cobertura (%)"
+      ],
+      "files": {
+        "xlsx": {
+          "file": "tabla_04_cumplimiento_por_categoria.xlsx",
+          "bytes": 8108,
+          "sha256": "963bf18f7417b4afcb3431d40d50424d58986c2353dd8e7c7a5472eee24e00f2"
+        },
+        "csv": {
+          "file": "tabla_04_cumplimiento_por_categoria.csv",
+          "bytes": 465,
+          "sha256": "ef1158a8f40aebd002ff45caf3e88ec3d0dfb4655a3b5bcfa19ead1475863fa9"
+        },
+        "pdf": {
+          "file": "tabla_04_cumplimiento_por_categoria.pdf",
+          "bytes": 3972,
+          "sha256": "d226cb2cf3cc6e23c1001451c8c83ff6fec5e5688df853393e905a159676b6a4"
+        }
+      }
+    },
+    {
+      "number": 5,
+      "slug": "hallazgos_severidad_estado",
+      "title": "Tabla 5. Hallazgos por severidad y estado del ciclo de vida",
+      "caption": "Distribución de hallazgos únicos por severidad y estado del ciclo de vida, incluyendo total histórico y hallazgos activos.",
+      "explanation": "Muestra el estado del backlog y la madurez del proceso de remediación. Un total alto de hallazgos no implica necesariamente un backlog alto: parte puede estar resuelto o documentado como falso positivo. La lectura conjunta de severidad y estado permite distinguir riesgo abierto de deuda histórica.",
+      "description": "Matriz de severidad por estado. Cada celda cuenta hallazgos únicos, no ocurrencias. «Activos» agrega los estados distintos de resuelto y falso positivo. La columna «Total histórico» conserva los cierres para trazabilidad.",
+      "notes": "Fuente: Dataset sintético reproducible; 76 hallazgos únicos. Un hallazgo resuelto exige una comprobación posterior satisfactoria o una justificación autorizada. «Riesgo aceptado» sigue siendo un hallazgo activo. DATOS SIMULADOS: no usar como resultados empíricos.",
+      "rows": 5,
+      "columns": [
+        "Severidad",
+        "Detectado",
+        "En revisión",
+        "Corrección planificada",
+        "Pendiente de validación",
+        "Riesgo aceptado",
+        "Resuelto",
+        "Falso positivo",
+        "Total histórico",
+        "Activos"
+      ],
+      "files": {
+        "xlsx": {
+          "file": "tabla_05_hallazgos_severidad_estado.xlsx",
+          "bytes": 7881,
+          "sha256": "68b36c4c60b59c9e8065bea7887496d53e247c6c6a9bbd01edc8d58a9e58cd96"
+        },
+        "csv": {
+          "file": "tabla_05_hallazgos_severidad_estado.csv",
+          "bytes": 289,
+          "sha256": "515b59957a65af45a776086306e58449b62e244958c4b33d7f81a7ba851c4428"
+        },
+        "pdf": {
+          "file": "tabla_05_hallazgos_severidad_estado.pdf",
+          "bytes": 3675,
+          "sha256": "731c67fe199b5fc05a54b3394f59c1e57f27f45bd4ece3b58386ef6467e1cd84"
+        }
+      }
+    },
+    {
+      "number": 6,
+      "slug": "trazabilidad_ejecuciones",
+      "title": "Tabla 6. Trazabilidad y métricas de las ejecuciones",
+      "caption": "Trazabilidad de las ejecuciones: fecha, servidor, entorno, disparador, estado, conteos, cumplimiento, cobertura, duración y naturaleza simulada.",
+      "explanation": "Hace reproducible la evaluación: cada fila conserva el servidor, la fecha, el disparador, el estado y los conteos que produjeron el score. Sin esta trazabilidad no es posible distinguir una mejora real de un cambio en la cobertura, un fallo de conexión o una ejecución incompleta.",
+      "description": "Una fila por ejecución. «Cumplimiento» usa aprobados sobre aplicables evaluados; «Cobertura» indica la proporción del perfil que pudo evaluarse. La duración corresponde al intervalo de ejecución registrado. «Simulado» identifica el uso del conector de pruebas.",
+      "notes": "Fuente: Dataset sintético reproducible; 24 ejecuciones. Los fallos de conexión producen controles no evaluados y un score no calculable; no se imputan como aprobados. DATOS SIMULADOS: no usar como resultados empíricos.",
+      "rows": 24,
+      "columns": [
+        "Ejecución",
+        "Fecha",
+        "Servidor",
+        "Entorno",
+        "Disparador",
+        "Estado",
+        "Controles",
+        "Aprobados",
+        "Incumplidos",
+        "No aplica",
+        "No evaluado",
+        "Cumplimiento (%)",
+        "Cobertura (%)",
+        "Duración (s)",
+        "Simulado"
+      ],
+      "files": {
+        "xlsx": {
+          "file": "tabla_06_trazabilidad_ejecuciones.xlsx",
+          "bytes": 9759,
+          "sha256": "df1e93d8a30ed8c61c144ea271e56994911644f1719068d1057da0f54b3ab487"
+        },
+        "csv": {
+          "file": "tabla_06_trazabilidad_ejecuciones.csv",
+          "bytes": 2843,
+          "sha256": "09ffb4182a107109364c42370d9f20b813bbede79c751a02e5b708c7fb265ebf"
+        },
+        "pdf": {
+          "file": "tabla_06_trazabilidad_ejecuciones.pdf",
+          "bytes": 6441,
+          "sha256": "ebe453857106d02842cece095923ab2b718932831bd27f84e26248c5713dd0b5"
+        }
+      }
+    }
+  ],
+  "figures": [
+    {
+      "number": 1,
+      "slug": "arquitectura_referencia",
+      "title": "Figura 1. Arquitectura de referencia y flujo de auditoría",
+      "caption": "Arquitectura de referencia y flujo de auditoría: límites de confianza, lectura SSH, scoring, IA opcional y revisión humana.",
+      "explanation": "Sitúa los límites de confianza del sistema: la consola no ejecuta comandos de corrección, el motor SSH solo lee configuración y la IA propone texto para revisión humana. Esta separación es una decisión de diseño central para reducir el riesgo operativo y explicar por qué la plataforma no modifica los servidores.",
+      "description": "Diagrama conceptual. La ruta principal va del usuario a la SPA, la API y PostgreSQL; el worker consulta el servidor por SSH de solo lectura. La IA es opcional y su salida pasa por revisión humana. n8n orquesta programaciones mediante API keys con alcance limitado.",
+      "notes": "Fuente y elaboración: figura conceptual propia. No representa una topología de despliegue específica ni incluye secretos. La IA no tiene herramientas de ejecución.",
+      "draw_key": "architecture",
+      "files": {
+        "svg": {
+          "file": "figura_01_arquitectura_referencia.svg",
+          "bytes": 31077,
+          "sha256": "4ea0af9dbafab882ffe862df2c9e50cf344e17a834cd3e2d14cbb4869ac0b491"
+        },
+        "pdf": {
+          "file": "figura_01_arquitectura_referencia.pdf",
+          "bytes": 32370,
+          "sha256": "8c84de1b0782e4404b44e98c651d8eb5512aafa9c2babb85559002ecddbceeed"
+        },
+        "png_600dpi": {
+          "file": "figura_01_arquitectura_referencia.png",
+          "bytes": 824620,
+          "sha256": "588c7417fae677dc328d0ba07e85497480460e795f6e768d940d722590f75998"
+        },
+        "preview": {
+          "file": "figura_01_arquitectura_referencia_preview.png",
+          "bytes": 167037,
+          "sha256": "cdda96063fc1474e0202702e3d3d72c27481c570125660ff92aaa68b72d4c528"
+        },
+        "csv": {
+          "file": "figura_01_arquitectura_referencia.csv",
+          "bytes": 535,
+          "sha256": "78de04a313371d897879c041da0c3b923f83c9b271c74bc92f86f4fc4c6cf4bb"
+        }
+      }
+    },
+    {
+      "number": 2,
+      "slug": "cumplimiento_cobertura_servidor",
+      "title": "Figura 2. Cumplimiento y cobertura por servidor",
+      "caption": "Cumplimiento y cobertura por servidor en la última ejecución completada; la cobertura acompaña al score y no se interpreta como certificación.",
+      "explanation": "Compara el resultado de la última auditoría con la proporción de controles que pudo evaluarse. Un score alto acompañado de baja cobertura no es comparable con un score similar obtenido sobre el perfil completo; la cobertura es parte del resultado, no un detalle técnico.",
+      "description": "Barras horizontales ordenadas por cumplimiento. La barra oscura representa el score y la barra clara la cobertura. La línea vertical punteada en 80 % es una referencia de lectura, no un umbral de certificación.",
+      "notes": "Fuente: Dataset sintético reproducible; última ejecución completada por servidor (n=8). Score = aprobados / (aprobados + incumplidos) × 100. DATOS SIMULADOS: no usar como resultados empíricos.",
+      "draw_key": "score_coverage",
+      "files": {
+        "svg": {
+          "file": "figura_02_cumplimiento_cobertura_servidor.svg",
+          "bytes": 18853,
+          "sha256": "bc73e561d4b94987e1af036633ddcff6006fea110cabb568f61bef8eb1b7f41c"
+        },
+        "pdf": {
+          "file": "figura_02_cumplimiento_cobertura_servidor.pdf",
+          "bytes": 26178,
+          "sha256": "abd1392423b0bafee179f6dc5441e820bab0d165ac9815c7ac4c77f9a4e3f121"
+        },
+        "png_600dpi": {
+          "file": "figura_02_cumplimiento_cobertura_servidor.png",
+          "bytes": 550160,
+          "sha256": "43bdfc97f1d392ef4dc45f3aa0c53e00d8657896fdf0b20feccd3a8706e73d66"
+        },
+        "preview": {
+          "file": "figura_02_cumplimiento_cobertura_servidor_preview.png",
+          "bytes": 101997,
+          "sha256": "53cbb820b33169c47b356dfa9f07ca63ed2aaf9a28438c5eb5e872eca58ed8d5"
+        },
+        "csv": {
+          "file": "figura_02_cumplimiento_cobertura_servidor.csv",
+          "bytes": 543,
+          "sha256": "8205f0d7b21c8fa7b7713894819f8db326948196340112b34c208a2f2028b2ec"
+        }
+      }
+    },
+    {
+      "number": 3,
+      "slug": "evolucion_cumplimiento",
+      "title": "Figura 3. Evolución del cumplimiento por servidor",
+      "caption": "Evolución del cumplimiento por servidor a lo largo de las ejecuciones completadas, con referencia visual en 80 %.",
+      "explanation": "Permite observar mejoras y regresiones a lo largo de las ejecuciones. La evolución es descriptiva: no demuestra causalidad ni atribuye el cambio a una corrección concreta, pero ayuda a formular hipótesis y a detectar servidores que requieren seguimiento.",
+      "description": "Pequeños múltiplos, uno por servidor. Cada punto es una ejecución completada; la línea punteada marca 80 % como referencia visual. La escala es común para facilitar la comparación entre servidores.",
+      "notes": "Fuente: Dataset sintético reproducible; 24 observaciones de 8 servidores. Los huecos indican ejecuciones no completadas o sin score calculable. DATOS SIMULADOS: no usar como resultados empíricos.",
+      "draw_key": "trend",
+      "files": {
+        "svg": {
+          "file": "figura_03_evolucion_cumplimiento.svg",
+          "bytes": 51223,
+          "sha256": "7f4bf98c09aa298b6ffdebf8137d907810b2612cc40c1d71c7bb3e5f0f14f53e"
+        },
+        "pdf": {
+          "file": "figura_03_evolucion_cumplimiento.pdf",
+          "bytes": 26184,
+          "sha256": "dbfbeae678ccbf6a66cca211ba95730e1888887c65f851dee7639d34a3b86a46"
+        },
+        "png_600dpi": {
+          "file": "figura_03_evolucion_cumplimiento.png",
+          "bytes": 600274,
+          "sha256": "1568f2d3bac1e2801f0c133ea147ffa06d08e0fb9e43df66545e5cb704b2cf30"
+        },
+        "preview": {
+          "file": "figura_03_evolucion_cumplimiento_preview.png",
+          "bytes": 115789,
+          "sha256": "1e5777386f741f2fc79777c88cb1d2d7928fd192fcfe257b75f1c928d028f4ff"
+        },
+        "csv": {
+          "file": "figura_03_evolucion_cumplimiento.csv",
+          "bytes": 1254,
+          "sha256": "3dd89aedcacdbf2ca4b26a775a3b335257d7a7e945a05a820b4b975e6e6d85eb"
+        }
+      }
+    },
+    {
+      "number": 4,
+      "slug": "tasa_aprobacion_control",
+      "title": "Figura 4. Tasa de aprobación por control",
+      "caption": "Tasa de aprobación por control, ordenada de menor a mayor, con severidad, número de casos e identificación de controles internos.",
+      "explanation": "Ordena los controles por dificultad observada y facilita la priorización. Los controles con menor tasa son candidatos a revisión, pero la decisión debe considerar severidad, exposición del servidor y esfuerzo de remediación; la tasa por sí sola no define el riesgo.",
+      "description": "Gráfico de puntos y tallos. La posición indica la tasa de aprobación sobre controles evaluados y el color la severidad. El tamaño del punto representa el número de casos evaluados; los controles internos se marcan con «(I)».",
+      "notes": "Fuente: Dataset sintético reproducible; 336 checks. Denominador = aprobados + incumplidos; se excluyen no aplicables y no evaluados. El tamaño del punto es proporcional a los casos evaluados; «(I)» identifica controles internos sin referencia CIS oficial. DATOS SIMULADOS: no usar como resultados empíricos.",
+      "draw_key": "control_rate",
+      "files": {
+        "svg": {
+          "file": "figura_04_tasa_aprobacion_control.svg",
+          "bytes": 26580,
+          "sha256": "379446cf4bfe5d32b4805ea596eb992756da4bf9beb4ac2d3089849c782b69c2"
+        },
+        "pdf": {
+          "file": "figura_04_tasa_aprobacion_control.pdf",
+          "bytes": 28780,
+          "sha256": "dc88db34e993dc21e80ab8f47bad11483b89b7a860349c2bb5e303bfb7f7482b"
+        },
+        "png_600dpi": {
+          "file": "figura_04_tasa_aprobacion_control.png",
+          "bytes": 675233,
+          "sha256": "2d421861f0e174938846312a185ac0ccda71c29a88e554c073130ea3a77515fe"
+        },
+        "preview": {
+          "file": "figura_04_tasa_aprobacion_control_preview.png",
+          "bytes": 129638,
+          "sha256": "f24e180d81db5ae79c404cdce99e96a4ef4e504472446e5b67770cbd6d98210e"
+        },
+        "csv": {
+          "file": "figura_04_tasa_aprobacion_control.csv",
+          "bytes": 1080,
+          "sha256": "a7db3a7ad900797bb9f3dc338f2555b5668d165001a443dc5a941435b3a25524"
+        }
+      }
+    },
+    {
+      "number": 5,
+      "slug": "hallazgos_severidad_estado",
+      "title": "Figura 5. Hallazgos por severidad y estado",
+      "caption": "Distribución de hallazgos únicos por severidad y estado del ciclo de vida, con total por severidad.",
+      "explanation": "Resume la composición del backlog y la madurez del ciclo de vida. La severidad indica potencial impacto; el estado indica en qué punto del proceso está la respuesta. Juntos permiten distinguir riesgo abierto, trabajo en curso y deuda histórica.",
+      "description": "Barras horizontales apiladas por severidad. Cada segmento representa un estado del ciclo de vida y el total se anota al final. «Resuelto» y «Falso positivo» son cierres; «Riesgo aceptado» permanece activo.",
+      "notes": "Fuente: Dataset sintético reproducible; 76 hallazgos únicos. Los conteos son hallazgos, no ocurrencias de auditoría. DATOS SIMULADOS: no usar como resultados empíricos.",
+      "draw_key": "findings",
+      "files": {
+        "svg": {
+          "file": "figura_05_hallazgos_severidad_estado.svg",
+          "bytes": 22766,
+          "sha256": "9e6a2be2d60242147d2d29e2e6f72eeda38386a22105b1b8e1c8b4c96aff7fe2"
+        },
+        "pdf": {
+          "file": "figura_05_hallazgos_severidad_estado.pdf",
+          "bytes": 23687,
+          "sha256": "c9be5a6556371d48024e329a1a5d77a032f0d96d32ea77a9ad7f000f859721f7"
+        },
+        "png_600dpi": {
+          "file": "figura_05_hallazgos_severidad_estado.png",
+          "bytes": 380733,
+          "sha256": "c04342e7a79007160f5ddf43db0232c52b80d6435839dd5527343c0f2cea740e"
+        },
+        "preview": {
+          "file": "figura_05_hallazgos_severidad_estado_preview.png",
+          "bytes": 70816,
+          "sha256": "ffad1a0782d4a16b48f90714aa4665fab974a3aec7247828a0e12fa8336c4b83"
+        },
+        "csv": {
+          "file": "figura_05_hallazgos_severidad_estado.csv",
+          "bytes": 848,
+          "sha256": "9936b3723d4ab3e408100b7f27c048dff19af621ff5a095cd952e9aa75c46d9b"
+        }
+      }
+    },
+    {
+      "number": 6,
+      "slug": "mapa_calor_servidor_categoria",
+      "title": "Figura 6. Mapa de calor de cumplimiento por servidor y categoría",
+      "caption": "Mapa de calor de tasa de aprobación por servidor y categoría de control, agregando todas las ejecuciones del periodo.",
+      "explanation": "Revela patrones que no se ven en promedios globales: un servidor puede cumplir bien en firewall y fallar sistemáticamente en actualizaciones, o una categoría puede ser débil en toda la muestra. El mapa orienta auditorías de seguimiento y discusiones de priorización.",
+      "description": "Filas: servidores. Columnas: categorías de control. El color y el número indican la tasa de aprobación agregada de todas las ejecuciones; los valores más oscuros corresponden a mayor cumplimiento. Las celdas con pocos casos deben interpretarse con cautela.",
+      "notes": "Fuente: Dataset sintético reproducible; 336 checks agregados por servidor y categoría. Tasa = aprobados / (aprobados + incumplidos). DATOS SIMULADOS: no usar como resultados empíricos.",
+      "draw_key": "heatmap",
+      "files": {
+        "svg": {
+          "file": "figura_06_mapa_calor_servidor_categoria.svg",
+          "bytes": 30488,
+          "sha256": "3d4a90f2d8f263ac8f473a3c935161058cf54851f90c57793365e6805b7f9885"
+        },
+        "pdf": {
+          "file": "figura_06_mapa_calor_servidor_categoria.pdf",
+          "bytes": 29403,
+          "sha256": "8b262d65460a97dce046c0ae7f6749e0ac7236ace488bca86f012c148c825bce"
+        },
+        "png_600dpi": {
+          "file": "figura_06_mapa_calor_servidor_categoria.png",
+          "bytes": 710859,
+          "sha256": "554221714d23c905c3e17067e42c0531ba80facb3a3951eb01bf9c8a5c42134c"
+        },
+        "preview": {
+          "file": "figura_06_mapa_calor_servidor_categoria_preview.png",
+          "bytes": 126052,
+          "sha256": "4776240539bd5f384a231775e027b6d293f285022dec0024dd3ab99c673e81e1"
+        },
+        "csv": {
+          "file": "figura_06_mapa_calor_servidor_categoria.csv",
+          "bytes": 3356,
+          "sha256": "344da929457e03968f7ae05a83906db84311740b9b0c6ce97fb96836cf9fea07"
+        }
+      }
+    }
+  ],
+  "data": [
+    {
+      "file": "servidores.csv",
+      "bytes": 1766,
+      "sha256": "1b92d3ba0a4dc0f805fc0d2e6a30f739f79f2686e056b0fa414695d8613964b2"
+    },
+    {
+      "file": "ejecuciones.csv",
+      "bytes": 3826,
+      "sha256": "540aa0fe2432955f2ce0feb8de7fe5cc8b3bf9bc8606075feb226d1904dd569c"
+    },
+    {
+      "file": "checks.csv",
+      "bytes": 69785,
+      "sha256": "e56f5b1fc7656bc777011b54627104a2b50f9d94a25c4cc3818e0af1492530a2"
+    },
+    {
+      "file": "controles.csv",
+      "bytes": 6005,
+      "sha256": "efefccdc09310b903bfaae7fab26def58015d0f5133e433b99c39954d752ea03"
+    },
+    {
+      "file": "hallazgos.csv",
+      "bytes": 15901,
+      "sha256": "f26d85d5c17a808de4b03857604cfd84b34fde02bcd1650c77839e4493640853"
+    }
+  ],
+  "files": {
+    "tabla_01_xlsx": {
+      "file": "tabla_01_caracterizacion_servidores.xlsx",
+      "bytes": 8669,
+      "sha256": "f43c44ac75203c6d1d317e5354f056ade0c9fa5a8a088f3662f750eee9580aef"
+    },
+    "tabla_01_csv": {
+      "file": "tabla_01_caracterizacion_servidores.csv",
+      "bytes": 1284,
+      "sha256": "f5b15a908afbf2f40d627f7d6f813768842cfded38497aee7284d4fe7f183ba5"
+    },
+    "tabla_01_pdf": {
+      "file": "tabla_01_caracterizacion_servidores.pdf",
+      "bytes": 4519,
+      "sha256": "4fc982958c4dff64330126b504359a57a788ea84168156a38f19302c9e76ea50"
+    },
+    "tabla_02_xlsx": {
+      "file": "tabla_02_catalogo_controles.xlsx",
+      "bytes": 9210,
+      "sha256": "fd2b709adbc1aee16f87f21e083aa86e60ca4b6c0b0926571965c3fa26f602bc"
+    },
+    "tabla_02_csv": {
+      "file": "tabla_02_catalogo_controles.csv",
+      "bytes": 2749,
+      "sha256": "6620e50890256c1766f31167dc681a48f3beb526f8c9a683258cd4cbac64a09e"
+    },
+    "tabla_02_pdf": {
+      "file": "tabla_02_catalogo_controles.pdf",
+      "bytes": 5634,
+      "sha256": "b96a020aad5b33aba68061beb53d4472c0e795f61ff1a2d55a909632663ac1fd"
+    },
+    "tabla_03_xlsx": {
+      "file": "tabla_03_resultados_por_control.xlsx",
+      "bytes": 9150,
+      "sha256": "16f28384603b3fef3987be9eacc9236d08d387e541a4a6ad389995b861789d1d"
+    },
+    "tabla_03_csv": {
+      "file": "tabla_03_resultados_por_control.csv",
+      "bytes": 1543,
+      "sha256": "540e20528cd3eaf677e27a6e5f9d2731bf5ea7f0ccf86a9f23c3f8d549b69ace"
+    },
+    "tabla_03_pdf": {
+      "file": "tabla_03_resultados_por_control.pdf",
+      "bytes": 5382,
+      "sha256": "480bccaf406a1e6f62bd0b99e20a53aec280c050ba23d55e3abaf3b5017023e9"
+    },
+    "tabla_04_xlsx": {
+      "file": "tabla_04_cumplimiento_por_categoria.xlsx",
+      "bytes": 8108,
+      "sha256": "963bf18f7417b4afcb3431d40d50424d58986c2353dd8e7c7a5472eee24e00f2"
+    },
+    "tabla_04_csv": {
+      "file": "tabla_04_cumplimiento_por_categoria.csv",
+      "bytes": 465,
+      "sha256": "ef1158a8f40aebd002ff45caf3e88ec3d0dfb4655a3b5bcfa19ead1475863fa9"
+    },
+    "tabla_04_pdf": {
+      "file": "tabla_04_cumplimiento_por_categoria.pdf",
+      "bytes": 3972,
+      "sha256": "d226cb2cf3cc6e23c1001451c8c83ff6fec5e5688df853393e905a159676b6a4"
+    },
+    "tabla_05_xlsx": {
+      "file": "tabla_05_hallazgos_severidad_estado.xlsx",
+      "bytes": 7881,
+      "sha256": "68b36c4c60b59c9e8065bea7887496d53e247c6c6a9bbd01edc8d58a9e58cd96"
+    },
+    "tabla_05_csv": {
+      "file": "tabla_05_hallazgos_severidad_estado.csv",
+      "bytes": 289,
+      "sha256": "515b59957a65af45a776086306e58449b62e244958c4b33d7f81a7ba851c4428"
+    },
+    "tabla_05_pdf": {
+      "file": "tabla_05_hallazgos_severidad_estado.pdf",
+      "bytes": 3675,
+      "sha256": "731c67fe199b5fc05a54b3394f59c1e57f27f45bd4ece3b58386ef6467e1cd84"
+    },
+    "tabla_06_xlsx": {
+      "file": "tabla_06_trazabilidad_ejecuciones.xlsx",
+      "bytes": 9759,
+      "sha256": "df1e93d8a30ed8c61c144ea271e56994911644f1719068d1057da0f54b3ab487"
+    },
+    "tabla_06_csv": {
+      "file": "tabla_06_trazabilidad_ejecuciones.csv",
+      "bytes": 2843,
+      "sha256": "09ffb4182a107109364c42370d9f20b813bbede79c751a02e5b708c7fb265ebf"
+    },
+    "tabla_06_pdf": {
+      "file": "tabla_06_trazabilidad_ejecuciones.pdf",
+      "bytes": 6441,
+      "sha256": "ebe453857106d02842cece095923ab2b718932831bd27f84e26248c5713dd0b5"
+    },
+    "figura_01_svg": {
+      "file": "figura_01_arquitectura_referencia.svg",
+      "bytes": 31077,
+      "sha256": "4ea0af9dbafab882ffe862df2c9e50cf344e17a834cd3e2d14cbb4869ac0b491"
+    },
+    "figura_01_pdf": {
+      "file": "figura_01_arquitectura_referencia.pdf",
+      "bytes": 32370,
+      "sha256": "8c84de1b0782e4404b44e98c651d8eb5512aafa9c2babb85559002ecddbceeed"
+    },
+    "figura_01_png_600dpi": {
+      "file": "figura_01_arquitectura_referencia.png",
+      "bytes": 824620,
+      "sha256": "588c7417fae677dc328d0ba07e85497480460e795f6e768d940d722590f75998"
+    },
+    "figura_01_preview": {
+      "file": "figura_01_arquitectura_referencia_preview.png",
+      "bytes": 167037,
+      "sha256": "cdda96063fc1474e0202702e3d3d72c27481c570125660ff92aaa68b72d4c528"
+    },
+    "figura_01_csv": {
+      "file": "figura_01_arquitectura_referencia.csv",
+      "bytes": 535,
+      "sha256": "78de04a313371d897879c041da0c3b923f83c9b271c74bc92f86f4fc4c6cf4bb"
+    },
+    "figura_02_svg": {
+      "file": "figura_02_cumplimiento_cobertura_servidor.svg",
+      "bytes": 18853,
+      "sha256": "bc73e561d4b94987e1af036633ddcff6006fea110cabb568f61bef8eb1b7f41c"
+    },
+    "figura_02_pdf": {
+      "file": "figura_02_cumplimiento_cobertura_servidor.pdf",
+      "bytes": 26178,
+      "sha256": "abd1392423b0bafee179f6dc5441e820bab0d165ac9815c7ac4c77f9a4e3f121"
+    },
+    "figura_02_png_600dpi": {
+      "file": "figura_02_cumplimiento_cobertura_servidor.png",
+      "bytes": 550160,
+      "sha256": "43bdfc97f1d392ef4dc45f3aa0c53e00d8657896fdf0b20feccd3a8706e73d66"
+    },
+    "figura_02_preview": {
+      "file": "figura_02_cumplimiento_cobertura_servidor_preview.png",
+      "bytes": 101997,
+      "sha256": "53cbb820b33169c47b356dfa9f07ca63ed2aaf9a28438c5eb5e872eca58ed8d5"
+    },
+    "figura_02_csv": {
+      "file": "figura_02_cumplimiento_cobertura_servidor.csv",
+      "bytes": 543,
+      "sha256": "8205f0d7b21c8fa7b7713894819f8db326948196340112b34c208a2f2028b2ec"
+    },
+    "figura_03_svg": {
+      "file": "figura_03_evolucion_cumplimiento.svg",
+      "bytes": 51223,
+      "sha256": "7f4bf98c09aa298b6ffdebf8137d907810b2612cc40c1d71c7bb3e5f0f14f53e"
+    },
+    "figura_03_pdf": {
+      "file": "figura_03_evolucion_cumplimiento.pdf",
+      "bytes": 26184,
+      "sha256": "dbfbeae678ccbf6a66cca211ba95730e1888887c65f851dee7639d34a3b86a46"
+    },
+    "figura_03_png_600dpi": {
+      "file": "figura_03_evolucion_cumplimiento.png",
+      "bytes": 600274,
+      "sha256": "1568f2d3bac1e2801f0c133ea147ffa06d08e0fb9e43df66545e5cb704b2cf30"
+    },
+    "figura_03_preview": {
+      "file": "figura_03_evolucion_cumplimiento_preview.png",
+      "bytes": 115789,
+      "sha256": "1e5777386f741f2fc79777c88cb1d2d7928fd192fcfe257b75f1c928d028f4ff"
+    },
+    "figura_03_csv": {
+      "file": "figura_03_evolucion_cumplimiento.csv",
+      "bytes": 1254,
+      "sha256": "3dd89aedcacdbf2ca4b26a775a3b335257d7a7e945a05a820b4b975e6e6d85eb"
+    },
+    "figura_04_svg": {
+      "file": "figura_04_tasa_aprobacion_control.svg",
+      "bytes": 26580,
+      "sha256": "379446cf4bfe5d32b4805ea596eb992756da4bf9beb4ac2d3089849c782b69c2"
+    },
+    "figura_04_pdf": {
+      "file": "figura_04_tasa_aprobacion_control.pdf",
+      "bytes": 28780,
+      "sha256": "dc88db34e993dc21e80ab8f47bad11483b89b7a860349c2bb5e303bfb7f7482b"
+    },
+    "figura_04_png_600dpi": {
+      "file": "figura_04_tasa_aprobacion_control.png",
+      "bytes": 675233,
+      "sha256": "2d421861f0e174938846312a185ac0ccda71c29a88e554c073130ea3a77515fe"
+    },
+    "figura_04_preview": {
+      "file": "figura_04_tasa_aprobacion_control_preview.png",
+      "bytes": 129638,
+      "sha256": "f24e180d81db5ae79c404cdce99e96a4ef4e504472446e5b67770cbd6d98210e"
+    },
+    "figura_04_csv": {
+      "file": "figura_04_tasa_aprobacion_control.csv",
+      "bytes": 1080,
+      "sha256": "a7db3a7ad900797bb9f3dc338f2555b5668d165001a443dc5a941435b3a25524"
+    },
+    "figura_05_svg": {
+      "file": "figura_05_hallazgos_severidad_estado.svg",
+      "bytes": 22766,
+      "sha256": "9e6a2be2d60242147d2d29e2e6f72eeda38386a22105b1b8e1c8b4c96aff7fe2"
+    },
+    "figura_05_pdf": {
+      "file": "figura_05_hallazgos_severidad_estado.pdf",
+      "bytes": 23687,
+      "sha256": "c9be5a6556371d48024e329a1a5d77a032f0d96d32ea77a9ad7f000f859721f7"
+    },
+    "figura_05_png_600dpi": {
+      "file": "figura_05_hallazgos_severidad_estado.png",
+      "bytes": 380733,
+      "sha256": "c04342e7a79007160f5ddf43db0232c52b80d6435839dd5527343c0f2cea740e"
+    },
+    "figura_05_preview": {
+      "file": "figura_05_hallazgos_severidad_estado_preview.png",
+      "bytes": 70816,
+      "sha256": "ffad1a0782d4a16b48f90714aa4665fab974a3aec7247828a0e12fa8336c4b83"
+    },
+    "figura_05_csv": {
+      "file": "figura_05_hallazgos_severidad_estado.csv",
+      "bytes": 848,
+      "sha256": "9936b3723d4ab3e408100b7f27c048dff19af621ff5a095cd952e9aa75c46d9b"
+    },
+    "figura_06_svg": {
+      "file": "figura_06_mapa_calor_servidor_categoria.svg",
+      "bytes": 30488,
+      "sha256": "3d4a90f2d8f263ac8f473a3c935161058cf54851f90c57793365e6805b7f9885"
+    },
+    "figura_06_pdf": {
+      "file": "figura_06_mapa_calor_servidor_categoria.pdf",
+      "bytes": 29403,
+      "sha256": "8b262d65460a97dce046c0ae7f6749e0ac7236ace488bca86f012c148c825bce"
+    },
+    "figura_06_png_600dpi": {
+      "file": "figura_06_mapa_calor_servidor_categoria.png",
+      "bytes": 710859,
+      "sha256": "554221714d23c905c3e17067e42c0531ba80facb3a3951eb01bf9c8a5c42134c"
+    },
+    "figura_06_preview": {
+      "file": "figura_06_mapa_calor_servidor_categoria_preview.png",
+      "bytes": 126052,
+      "sha256": "4776240539bd5f384a231775e027b6d293f285022dec0024dd3ab99c673e81e1"
+    },
+    "figura_06_csv": {
+      "file": "figura_06_mapa_calor_servidor_categoria.csv",
+      "bytes": 3356,
+      "sha256": "344da929457e03968f7ae05a83906db84311740b9b0c6ce97fb96836cf9fea07"
+    },
+    "leyendas": {
+      "file": "leyendas_articulo.md",
+      "bytes": 15532,
+      "sha256": "bef6cf0a08dae9d988315bff379e8e51f193680f95839fe53b192a68f5c848c0"
+    },
+    "readme": {
+      "file": "LEEME.md",
+      "bytes": 2628,
+      "sha256": "85190401ec0efbe7596e0af9fd92833f20a392b6ba3df9ed62aa09518180bd99"
+    }
+  }
+}

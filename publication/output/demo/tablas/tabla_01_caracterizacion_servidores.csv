@@ -1,0 +1,9 @@
+﻿Servidor,Hostname,Entorno,Sistema operativo,Área responsable,Conexión,Perfil,Auditorías,Cumplimiento (%),Cobertura (%),Hallazgos activos,Última auditoría
+Observabilidad,monitor-01.nexo.local,Producción,Ubuntu 22.04 LTS,Operaciones,SSH,Línea base CIS Ubuntu 22.04,3,92.86,100.0,1,2026-09-23
+Nodo de respaldo,backup-01.nexo.local,Pruebas,Ubuntu 22.04 LTS,Infraestructura,SSH,Línea base CIS Ubuntu 22.04,3,85.71,100.0,2,2026-09-23
+DNS interno,dns-01.nexo.local,Producción,Ubuntu 22.04 LTS,Redes,SSH,Línea base CIS Ubuntu 22.04,3,81.82,78.57,3,2026-09-23
+ERP heredado,erp-legacy-01.nexo.local,Producción,Ubuntu 22.04 LTS,ERP,SSH,Línea base CIS Ubuntu 22.04,3,78.57,100.0,3,2026-09-23
+API de pagos,api-pagos-01.nexo.local,Producción,Ubuntu 22.04 LTS,Pagos y fraude,SSH,Línea base CIS Ubuntu 22.04,3,71.43,100.0,4,2026-09-23
+Portal de clientes,web-prod-01.nexo.local,Producción,Ubuntu 22.04 LTS,Aplicaciones,SSH,Línea base CIS Ubuntu 22.04,3,71.43,100.0,4,2026-09-23
+Base de datos de clientes,db-clientes-01.nexo.local,Producción,Ubuntu 22.04 LTS,Datos,SSH,Línea base CIS Ubuntu 22.04,3,64.29,100.0,5,2026-09-23
+Herramientas de desarrollo,devtools-01.nexo.local,Desarrollo,Ubuntu 22.04 LTS,Desarrollo,SSH,Línea base CIS Ubuntu 22.04,3,50.0,85.71,6,2026-09-23

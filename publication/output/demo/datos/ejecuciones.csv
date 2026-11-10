@@ -1,0 +1,25 @@
+﻿run_id,server_id,server_name,run_date,profile_name,benchmark_version,status,trigger_type,total_controls,passed,failed,not_applicable,not_evaluated,applicable,score,coverage,duration_seconds,is_simulated
+RUN-01-01,SRV-WEB-01,Portal de clientes,2026-07-15 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,manual,14,8,5,0,1,13,61.54,92.86,11.03,True
+RUN-01-02,SRV-WEB-01,Portal de clientes,2026-08-19 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,schedule,14,7,7,0,0,14,50.0,100.0,11.23,True
+RUN-01-03,SRV-WEB-01,Portal de clientes,2026-09-23 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,automation,14,10,4,0,0,14,71.43,100.0,11.84,True
+RUN-02-01,SRV-API-01,API de pagos,2026-07-15 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,manual,14,7,7,0,0,14,50.0,100.0,12.38,True
+RUN-02-02,SRV-API-01,API de pagos,2026-08-19 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,schedule,14,10,4,0,0,14,71.43,100.0,10.64,True
+RUN-02-03,SRV-API-01,API de pagos,2026-09-23 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,automation,14,10,4,0,0,14,71.43,100.0,11.74,True
+RUN-03-01,SRV-DB-01,Base de datos de clientes,2026-07-15 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,manual,14,4,9,0,1,13,30.77,92.86,10.18,True
+RUN-03-02,SRV-DB-01,Base de datos de clientes,2026-08-19 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,schedule,14,11,2,0,1,13,84.62,92.86,10.71,True
+RUN-03-03,SRV-DB-01,Base de datos de clientes,2026-09-23 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,automation,14,9,5,0,0,14,64.29,100.0,11.18,True
+RUN-04-01,SRV-BKP-01,Nodo de respaldo,2026-07-15 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,manual,14,9,5,0,0,14,64.29,100.0,11.24,True
+RUN-04-02,SRV-BKP-01,Nodo de respaldo,2026-08-19 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,schedule,14,12,2,0,0,14,85.71,100.0,9.82,True
+RUN-04-03,SRV-BKP-01,Nodo de respaldo,2026-09-23 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,automation,14,12,2,0,0,14,85.71,100.0,10.16,True
+RUN-05-01,SRV-MON-01,Observabilidad,2026-07-15 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,manual,14,12,2,0,0,14,85.71,100.0,9.8,True
+RUN-05-02,SRV-MON-01,Observabilidad,2026-08-19 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,schedule,14,9,4,0,1,13,69.23,92.86,10.59,True
+RUN-05-03,SRV-MON-01,Observabilidad,2026-09-23 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,automation,14,13,1,0,0,14,92.86,100.0,11.89,True
+RUN-06-01,SRV-DEV-01,Herramientas de desarrollo,2026-07-15 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,manual,14,6,7,0,1,13,46.15,92.86,11.01,True
+RUN-06-02,SRV-DEV-01,Herramientas de desarrollo,2026-08-19 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,schedule,14,7,7,0,0,14,50.0,100.0,10.56,True
+RUN-06-03,SRV-DEV-01,Herramientas de desarrollo,2026-09-23 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,automation,14,6,6,1,1,12,50.0,85.71,10.28,True
+RUN-07-01,SRV-DNS-01,DNS interno,2026-07-15 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,manual,14,9,5,0,0,14,64.29,100.0,11.55,True
+RUN-07-02,SRV-DNS-01,DNS interno,2026-08-19 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,schedule,14,13,1,0,0,14,92.86,100.0,11.26,True
+RUN-07-03,SRV-DNS-01,DNS interno,2026-09-23 03:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,automation,14,9,2,1,2,11,81.82,78.57,12.02,True
+RUN-08-01,SRV-ERP-01,ERP heredado,2026-07-15 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,manual,14,3,11,0,0,14,21.43,100.0,11.19,True
+RUN-08-02,SRV-ERP-01,ERP heredado,2026-08-19 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,schedule,14,5,9,0,0,14,35.71,100.0,11.44,True
+RUN-08-03,SRV-ERP-01,ERP heredado,2026-09-23 04:00:00,Línea base CIS Ubuntu 22.04,1.0.0,completed,automation,14,11,3,0,0,14,78.57,100.0,10.72,True
