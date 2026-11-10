@@ -1,0 +1,41 @@
+host_id,hostname,organization,environment,os,archetype,openssh_installed
+H001,srv-soporte-prod-01,Soporte TI,production,Ubuntu 24.04 LTS,default_install,True
+H002,srv-soporte-deve-02,Soporte TI,development,Ubuntu 24.04 LTS,default_install,True
+H003,srv-comercial-prod-03,Comercial,production,Ubuntu 24.04 LTS,neglected,True
+H004,srv-operaciones-prod-04,Operaciones,production,Ubuntu 24.04 LTS,default_install,True
+H005,srv-operaciones-deve-05,Operaciones,development,Ubuntu 24.04 LTS,neglected,True
+H006,srv-soporte-deve-06,Soporte TI,development,Ubuntu 24.04 LTS,neglected,True
+H007,srv-finanzas-prod-07,Finanzas,production,Ubuntu 24.04 LTS,neglected,True
+H008,srv-soporte-deve-08,Soporte TI,development,Ubuntu 24.04 LTS,partial,True
+H009,srv-finanzas-deve-09,Finanzas,development,Ubuntu 24.04 LTS,neglected,True
+H010,srv-soporte-stag-10,Soporte TI,staging,Ubuntu 24.04 LTS,partial,True
+H011,srv-operaciones-prod-11,Operaciones,production,Ubuntu 24.04 LTS,neglected,True
+H012,srv-finanzas-deve-12,Finanzas,development,Ubuntu 24.04 LTS,partial,True
+H013,srv-soporte-deve-13,Soporte TI,development,Ubuntu 24.04 LTS,partial,True
+H014,srv-finanzas-prod-14,Finanzas,production,Ubuntu 24.04 LTS,default_install,True
+H015,srv-operaciones-deve-15,Operaciones,development,Ubuntu 24.04 LTS,partial,True
+H016,srv-operaciones-deve-16,Operaciones,development,Ubuntu 24.04 LTS,hardened,True
+H017,srv-comercial-deve-17,Comercial,development,Ubuntu 24.04 LTS,partial,True
+H018,srv-soporte-stag-18,Soporte TI,staging,Ubuntu 24.04 LTS,partial,True
+H019,srv-finanzas-prod-19,Finanzas,production,Ubuntu 24.04 LTS,partial,False
+H020,srv-operaciones-deve-20,Operaciones,development,Ubuntu 24.04 LTS,hardened,True
+H021,srv-finanzas-deve-21,Finanzas,development,Ubuntu 24.04 LTS,partial,True
+H022,srv-soporte-stag-22,Soporte TI,staging,Ubuntu 24.04 LTS,neglected,True
+H023,srv-comercial-deve-23,Comercial,development,Ubuntu 24.04 LTS,partial,True
+H024,srv-finanzas-prod-24,Finanzas,production,Ubuntu 24.04 LTS,default_install,True
+H025,srv-finanzas-prod-25,Finanzas,production,Ubuntu 24.04 LTS,partial,True
+H026,srv-soporte-deve-26,Soporte TI,development,Ubuntu 24.04 LTS,partial,True
+H027,srv-operaciones-deve-27,Operaciones,development,Ubuntu 24.04 LTS,partial,True
+H028,srv-soporte-stag-28,Soporte TI,staging,Ubuntu 24.04 LTS,neglected,True
+H029,srv-soporte-deve-29,Soporte TI,development,Ubuntu 24.04 LTS,partial,True
+H030,srv-finanzas-prod-30,Finanzas,production,Ubuntu 24.04 LTS,default_install,True
+H031,srv-operaciones-stag-31,Operaciones,staging,Ubuntu 24.04 LTS,default_install,False
+H032,srv-comercial-deve-32,Comercial,development,Ubuntu 24.04 LTS,partial,True
+H033,srv-operaciones-stag-33,Operaciones,staging,Ubuntu 24.04 LTS,default_install,True
+H034,srv-finanzas-prod-34,Finanzas,production,Ubuntu 24.04 LTS,neglected,True
+H035,srv-comercial-deve-35,Comercial,development,Ubuntu 24.04 LTS,neglected,True
+H036,srv-soporte-prod-36,Soporte TI,production,Ubuntu 24.04 LTS,hardened,True
+H037,srv-comercial-prod-37,Comercial,production,Ubuntu 24.04 LTS,hardened,True
+H038,srv-finanzas-prod-38,Finanzas,production,Ubuntu 24.04 LTS,partial,True
+H039,srv-finanzas-prod-39,Finanzas,production,Ubuntu 24.04 LTS,hardened,True
+H040,srv-finanzas-prod-40,Finanzas,production,Ubuntu 24.04 LTS,neglected,True

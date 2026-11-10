@@ -86,6 +86,7 @@ flowchart LR
 ```
 
 El detalle está en [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+Consulta el [experimento de auditorías](experimento/README.md) para ver su metodología, dataset y resultados.
 
 ## Inicio rápido local
 

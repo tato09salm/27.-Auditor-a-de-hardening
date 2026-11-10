@@ -1,0 +1,362 @@
+{
+  "rows_total": 3360,
+  "runs_total": 240,
+  "hosts": 40,
+  "controls": 14,
+  "status_counts": {
+    "passed": 1890,
+    "failed": 1236,
+    "not_applicable": 71,
+    "not_evaluated": 163
+  },
+  "gt_counts": {
+    "passed": 1920,
+    "failed": 1206,
+    "not_applicable": 71,
+    "not_evaluated": 163
+  },
+  "faults": {
+    "": 3197,
+    "host_offline": 154,
+    "command_timeout": 9
+  },
+  "clean_rows": 3197,
+  "exact_matches": 3117,
+  "exact_rate_pct": 97.49765405067251,
+  "confusion": {
+    "TP": 1181,
+    "FP": 55,
+    "FN": 25,
+    "TN": 1865
+  },
+  "precision_pct": 95.55016181229773,
+  "recall_pct": 97.92703150912106,
+  "f1_pct": 96.72399672399672,
+  "accuracy_bin_pct": 97.44081893793985,
+  "kappa": 0.9462477914909531,
+  "accuracy_wilson": [
+    96.82630321519423,
+    97.93888022831929
+  ],
+  "precision_bootstrap": [
+    94.41747572815534,
+    96.68284789644012
+  ],
+  "recall_bootstrap": [
+    97.09784411276948,
+    98.67330016583747
+  ],
+  "disagreement_by_control": {
+    "SHADOW-PERMS": 55,
+    "AUTH-PWQUALITY": 17,
+    "AUTH-FAILLOCK": 8
+  },
+  "fp_by_control": {
+    "SHADOW-PERMS": 55
+  },
+  "fn_by_control": {
+    "AUTH-PWQUALITY": 17,
+    "AUTH-FAILLOCK": 8
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "n": 40,
+      "mean": 43.956923076923076,
+      "sd": 27.64865544973458,
+      "median": 42.86,
+      "min": 0.0,
+      "max": 92.86,
+      "coverage": 94.822,
+      "not_evaluated": 15,
+      "unreachable": 1,
+      "duration": 1334.2307692307693
+    },
+    {
+      "round": 2,
+      "n": 40,
+      "mean": 53.25628571428572,
+      "sd": 20.781994764376076,
+      "median": 50.0,
+      "min": 7.14,
+      "max": 90.0,
+      "coverage": 84.465,
+      "not_evaluated": 74,
+      "unreachable": 5,
+      "duration": 1363.9714285714285
+    },
+    {
+      "round": 3,
+      "n": 40,
+      "mean": 62.13945945945946,
+      "sd": 17.491528893525377,
+      "median": 64.29,
+      "min": 21.43,
+      "max": 92.86,
+      "coverage": 90.3575,
+      "not_evaluated": 42,
+      "unreachable": 3,
+      "duration": 1446.5405405405406
+    },
+    {
+      "round": 4,
+      "n": 40,
+      "mean": 65.74157894736842,
+      "sd": 17.291341455521508,
+      "median": 66.76,
+      "min": 28.57,
+      "max": 100.0,
+      "coverage": 92.8575,
+      "not_evaluated": 29,
+      "unreachable": 2,
+      "duration": 1422.842105263158
+    },
+    {
+      "round": 5,
+      "n": 40,
+      "mean": 67.414,
+      "sd": 14.918796919941684,
+      "median": 71.43,
+      "min": 28.57,
+      "max": 92.86,
+      "coverage": 97.679,
+      "not_evaluated": 2,
+      "unreachable": 0,
+      "duration": 1344.725
+    },
+    {
+      "round": 6,
+      "n": 40,
+      "mean": 68.93875,
+      "sd": 15.827350910969727,
+      "median": 71.43,
+      "min": 28.57,
+      "max": 85.71,
+      "coverage": 98.036,
+      "not_evaluated": 1,
+      "unreachable": 0,
+      "duration": 1424.3
+    }
+  ],
+  "paired": {
+    "n": 39,
+    "mean_diff": 24.734871794871793,
+    "sd_diff": 27.128979928423682,
+    "t": 5.693882529205392,
+    "df": 38,
+    "ci95": [
+      15.940648485082784,
+      33.529095104660804
+    ],
+    "dz": 0.9117508973846995
+  },
+  "groups": {
+    "hardened": [
+      84.176,
+      76.812,
+      80.0,
+      82.14,
+      74.286,
+      78.57
+    ],
+    "partial": [
+      60.682,
+      66.73076923076923,
+      67.05666666666667,
+      69.766,
+      68.3575,
+      68.220625
+    ],
+    "default_install": [
+      28.875,
+      40.628571428571426,
+      53.215,
+      65.87375,
+      69.99875,
+      72.6775
+    ],
+    "neglected": [
+      13.837272727272726,
+      32.801,
+      51.95444444444445,
+      54.194545454545455,
+      61.03818181818182,
+      62.88636363636363
+    ],
+    "production": [
+      42.706875000000004,
+      56.97785714285714,
+      67.500625,
+      74.38066666666667,
+      76.289375,
+      79.998125
+    ],
+    "staging": [
+      37.03333333333333,
+      46.666666666666664,
+      59.598333333333336,
+      65.75999999999999,
+      68.975,
+      70.16333333333333
+    ],
+    "development": [
+      47.57705882352941,
+      52.41866666666667,
+      57.437333333333335,
+      58.112352941176475,
+      59.004444444444445,
+      58.7
+    ]
+  },
+  "findings": {
+    "total": 369,
+    "resolved": 199,
+    "open": 170,
+    "reopened": 64,
+    "by_severity": {
+      "high": {
+        "total": 224,
+        "resolved": 119,
+        "open": 105,
+        "reopened": 35,
+        "median_open_rounds": 3.0,
+        "max_open_rounds": 6
+      },
+      "medium": {
+        "total": 145,
+        "resolved": 80,
+        "open": 65,
+        "reopened": 29,
+        "median_open_rounds": 3,
+        "max_open_rounds": 6
+      }
+    },
+    "by_first_round": {
+      "1": 298,
+      "6": 15,
+      "4": 11,
+      "2": 13,
+      "5": 14,
+      "3": 18
+    },
+    "by_rounds_open": {
+      "5": 56,
+      "1": 95,
+      "2": 66,
+      "3": 39,
+      "6": 80,
+      "4": 33
+    },
+    "resolved_by_round": {
+      "3": 61,
+      "4": 39,
+      "5": 24,
+      "2": 51,
+      "6": 24
+    }
+  },
+  "duration": {
+    "check_mean": 98.92055051610885,
+    "check_median": 99,
+    "check_p95": 192.0,
+    "check_min": 14,
+    "check_max": 279,
+    "run_mean": 1389.1921397379913,
+    "run_median": 1403,
+    "run_min": 782,
+    "run_max": 1657,
+    "by_control": {
+      "SSH-ROOT": {
+        "mean": 102.49583333333334,
+        "median": 107.5,
+        "p95": 141.04999999999998
+      },
+      "SSH-MAXAUTH": {
+        "mean": 100.725,
+        "median": 105.0,
+        "p95": 144.04999999999998
+      },
+      "SSH-EMPTY": {
+        "mean": 101.55,
+        "median": 106.0,
+        "p95": 143.0
+      },
+      "SSH-KEYONLY": {
+        "mean": 100.56666666666666,
+        "median": 105.0,
+        "p95": 144.0
+      },
+      "AUTH-PWQUALITY": {
+        "mean": 41.733333333333334,
+        "median": 43.0,
+        "p95": 63.0
+      },
+      "AUTH-FAILLOCK": {
+        "mean": 41.475,
+        "median": 43.0,
+        "p95": 57.04999999999998
+      },
+      "FW-ENABLED": {
+        "mean": 151.23333333333332,
+        "median": 169.0,
+        "p95": 212.09999999999997
+      },
+      "FW-DEFAULT": {
+        "mean": 36.25,
+        "median": 36.0,
+        "p95": 53.099999999999966
+      },
+      "UPDATES": {
+        "mean": 97.32916666666667,
+        "median": 100.0,
+        "p95": 135.24999999999991
+      },
+      "SHADOW-PERMS": {
+        "mean": 35.62083333333333,
+        "median": 36.0,
+        "p95": 51.04999999999998
+      },
+      "LOGGING": {
+        "mean": 158.30416666666667,
+        "median": 167.0,
+        "p95": 206.14999999999995
+      },
+      "AUDITD": {
+        "mean": 157.15416666666667,
+        "median": 163.0,
+        "p95": 207.0
+      },
+      "ASLR": {
+        "mean": 35.2125,
+        "median": 36.0,
+        "p95": 51.04999999999998
+      },
+      "SERVICES": {
+        "mean": 158.05416666666667,
+        "median": 167.0,
+        "p95": 216.0
+      }
+    }
+  },
+  "archetypes": {
+    "default_install": 8,
+    "neglected": 11,
+    "partial": 16,
+    "hardened": 5
+  },
+  "environments": {
+    "production": 16,
+    "development": 18,
+    "staging": 6
+  },
+  "organizations": {
+    "Soporte TI": 12,
+    "Comercial": 6,
+    "Operaciones": 9,
+    "Finanzas": 13
+  },
+  "openssh_absent": [
+    "H019",
+    "H031"
+  ]
+}

@@ -1,0 +1,15 @@
+control_code,cis_reference,official_cis_mapping,title,severity,category,check_key
+SSH-ROOT,5.2.7,True,Acceso SSH directo de root deshabilitado,high,Acceso remoto,ssh_root_login
+SSH-MAXAUTH,5.2.18,True,SSH limita los intentos de autenticación,medium,Acceso remoto,ssh_max_auth_tries
+SSH-EMPTY,5.2.9,True,SSH rechaza contraseñas vacías,high,Acceso remoto,ssh_permit_empty_passwords
+SSH-KEYONLY,,False,SSH prefiere autenticación por clave pública,medium,Acceso remoto,ssh_password_authentication
+AUTH-PWQUALITY,5.4.1,True,Requisitos de complejidad de contraseñas,high,Autenticación,password_quality
+AUTH-FAILLOCK,5.4.2,True,Bloqueo de cuentas por intentos fallidos,high,Autenticación,account_lockout
+FW-ENABLED,3.5.1.3,True,Firewall UFW habilitado,high,Firewall,firewall_enabled
+FW-DEFAULT,3.5.1.7,True,Política por defecto del firewall: denegar entrada,high,Firewall,firewall_default_deny
+UPDATES,1.9,True,Actualizaciones y parches de seguridad instalados,high,Actualizaciones,pending_updates
+SHADOW-PERMS,6.1.5,True,Permisos restrictivos sobre /etc/shadow,high,Permisos de archivos,shadow_permissions
+LOGGING,4.2.2.2,True,Servicio de registro rsyslog habilitado,medium,Registro de eventos,logging_enabled
+AUDITD,4.1.1.2,True,auditd habilitado y activo,medium,Registro de eventos,auditd_enabled
+ASLR,1.5.1,True,Aleatorización del espacio de direcciones (ASLR),medium,Hardening del kernel,aslr_enabled
+SERVICES,,False,Servicios de red innecesarios deshabilitados,medium,Servicios,unnecessary_services

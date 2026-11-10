@@ -1,0 +1,12 @@
+﻿Panel A. Matriz de confusión,Verdad: aprobado,Verdad: incumplido,Verdad: N/A,Total
+Motor: aprobado,1865,25,0,1890
+Motor: incumplido,55,1181,0,1236
+Motor: N/A,0,0,71,71
+Total,1920,1206,71,3197
+Panel B. Métricas,Valor,IC 95 %,Base (n),Lectura
+Concordancia exacta (todas las filas),"3117/3197 (97,50 %)",—,3197 filas,Coincidencia global
+Exactitud binaria (aprobado/incumplido),"97,44 %","96,83–97,94 %",3126 binarias,Wilson
+Precisión (incumplimiento),"95,55 %","94,42–96,68 %",1236 predichos,Bootstrap
+Sensibilidad (recall),"97,93 %","97,10–98,67 %",1206 reales,Bootstrap
+F1,"96,72 %",—,1206/1236,Media armónica
+Kappa de Cohen,"0,946",—,3126 binarias,Casi perfecta

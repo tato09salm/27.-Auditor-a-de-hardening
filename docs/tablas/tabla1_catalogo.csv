@@ -1,0 +1,15 @@
+﻿Código,Ref. CIS,Mapeo oficial,Control,Severidad,Categoría
+SSH-ROOT,5.2.7,Sí,Acceso SSH directo de root deshabilitado,Alta,Acceso remoto
+SSH-MAXAUTH,5.2.18,Sí,SSH limita los intentos de autenticación,Media,Acceso remoto
+SSH-EMPTY,5.2.9,Sí,SSH rechaza contraseñas vacías,Alta,Acceso remoto
+SSH-KEYONLY,—,No (interno),SSH prefiere autenticación por clave pública,Media,Acceso remoto
+AUTH-PWQUALITY,5.4.1,Sí,Requisitos de complejidad de contraseñas,Alta,Autenticación
+AUTH-FAILLOCK,5.4.2,Sí,Bloqueo de cuentas por intentos fallidos,Alta,Autenticación
+FW-ENABLED,3.5.1.3,Sí,Firewall UFW habilitado,Alta,Firewall
+FW-DEFAULT,3.5.1.7,Sí,Política por defecto del firewall: denegar entrada,Alta,Firewall
+UPDATES,1.9,Sí,Actualizaciones y parches de seguridad instalados,Alta,Actualizaciones
+SHADOW-PERMS,6.1.5,Sí,Permisos restrictivos sobre /etc/shadow,Alta,Permisos de archivos
+LOGGING,4.2.2.2,Sí,Servicio de registro rsyslog habilitado,Media,Registro de eventos
+AUDITD,4.1.1.2,Sí,auditd habilitado y activo,Media,Registro de eventos
+ASLR,1.5.1,Sí,Aleatorización del espacio de direcciones (ASLR),Media,Hardening del kernel
+SERVICES,—,No (interno),Servicios de red innecesarios deshabilitados,Media,Servicios
