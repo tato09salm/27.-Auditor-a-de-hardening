@@ -1,0 +1,34 @@
+{
+  "Controles mas incumplidos (JOIN + GROUP BY)" : {
+    "transaction" : "Controles mas incumplidos (JOIN + GROUP BY)",
+    "sampleCount" : 8433,
+    "errorCount" : 4,
+    "errorPct" : 0.047432706,
+    "meanResTime" : 720.2311158543797,
+    "medianResTime" : 442.0,
+    "minResTime" : 12.0,
+    "maxResTime" : 10012.0,
+    "pct1ResTime" : 1536.0,
+    "pct2ResTime" : 2317.7999999999956,
+    "pct3ResTime" : 5119.859999999997,
+    "throughput" : 184.29161476430866,
+    "receivedKBytesPerSec" : 176.8370318885356,
+    "sentKBytesPerSec" : 0.0
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 8433,
+    "errorCount" : 4,
+    "errorPct" : 0.047432706,
+    "meanResTime" : 720.2311158543797,
+    "medianResTime" : 442.0,
+    "minResTime" : 12.0,
+    "maxResTime" : 10012.0,
+    "pct1ResTime" : 1536.0,
+    "pct2ResTime" : 2317.7999999999956,
+    "pct3ResTime" : 5119.859999999997,
+    "throughput" : 184.29161476430866,
+    "receivedKBytesPerSec" : 176.8370318885356,
+    "sentKBytesPerSec" : 0.0
+  }
+}

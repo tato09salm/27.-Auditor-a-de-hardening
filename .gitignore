@@ -39,3 +39,16 @@ Thumbs.db
 tmp/
 *.log
 cis_benchmark_text.txt
+
+# JMeter: resultados crudos y reportes HTML (se regeneran con jmeter/scripts/)
+jmeter/resultados/*.jtl
+# Solo se versionan los reportes que cuentan la historia; el resto queda local
+jmeter/reportes/*
+!jmeter/reportes/http_10h/
+!jmeter/reportes/http_50h/
+!jmeter/reportes/http_80h/
+!jmeter/reportes/http_85h/
+!jmeter/reportes/http_150h/
+!jmeter/reportes/jdbc2_100h/
+!jmeter/reportes/jdbc2_150h/
+!jmeter/reportes/jdbc2_1000h/
